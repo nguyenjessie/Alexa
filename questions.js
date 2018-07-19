@@ -7,24 +7,34 @@ module.exports = {
    */
   QUESTIONS_EN_US: [
     {
-      'Reindeer have very thick coats, how many hairs per square inch do they have?': [
-        '13,000',
-        '1,200',
+      'What is the smallest piece of information a computer can store?': [
+        'Code',
+        'Bit',
         '5,000',
-        '700',
-        '1,000',
-        '120,000',
       ],
     },
     {
-      'The 1964 classic Rudolph The Red Nosed Reindeer was filmed in? ': [
-        'Japan',
-        'United States',
-        'Finland',
-        'Germany',
-        'Canada',
-        'Norway',
-        'France',
+      'How many values can one binary wire represent?': [
+        'Two',
+        'One',
+        'Three',
+        'Four',
+      ],
+    },
+    {
+      'What is the value of the binary number 110?': [
+        'Six',
+        'Four',
+        'Two',
+        'Eleven',
+      ],
+    },
+    {
+      'How many values can be represented with four wires?': [
+        'Eight',
+        'Four',
+        'Twelve',
+        'Sixteen',
       ],
     },
   ],
