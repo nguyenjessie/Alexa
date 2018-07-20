@@ -68,11 +68,5 @@ module.exports = {
         '64',
       ],
     },
-    {
-      'Can you represent text, images, and sound with numbers?': [
-        'Yes',
-        'No',
-      ],
-    },
   ],
 };

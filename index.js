@@ -6,8 +6,9 @@ const questions = require('./questions');
 const i18n = require('i18next');
 const sprintf = require('i18next-sprintf-postprocessor');
 
-const ANSWER_COUNT = 4;
-const GAME_LENGTH = 5;
+const ANSWER_COUNT = 3eifjccgiehvnekigvrlcknfnjurvcnjjnlclghgbkhbr
+;
+const GAME_LENGTH = 3;
 
 function populateGameQuestions(translatedQuestions) {
   const gameQuestions = [];
@@ -80,6 +81,8 @@ function isAnswerSlotValid(intent) {
     && parseInt(intent.slots.Answer.value, 10) > 0;
 }
 
+var lol = 2;
+
 function handleUserGuess(userGaveUp, handlerInput) {
   const { requestEnvelope, attributesManager, responseBuilder } = handlerInput;
   const { intent } = requestEnvelope.request;
@@ -98,14 +101,10 @@ function handleUserGuess(userGaveUp, handlerInput) {
   const requestAttributes = attributesManager.getRequestAttributes();
   const translatedQuestions = requestAttributes.t('QUESTIONS');
 
-  console.log(parseInt(intent.slots.Answer.value, 10), sessionAttributes.correctAnswerIndex, correctAnswerIndex);
-  console.log(answerSlotValid, parseInt(intent.slots.Answer.value, 10) === sessionAttributes.correctAnswerIndex)
-
-
-  if (answerSlotValid
-    && parseInt(intent.slots.Answer.value, 10) === sessionAttributes.correctAnswerIndex) {
+  if (lol != 0) {
     currentScore += 1;
     speechOutputAnalysis = requestAttributes.t('ANSWER_CORRECT_MESSAGE');
+    lol -= 1;
   } else {
     if (!userGaveUp) {
       speechOutputAnalysis = requestAttributes.t('ANSWER_WRONG_MESSAGE');
@@ -237,6 +236,7 @@ const languageString = {
   en: {
     translation: {
       QUESTIONS: questions.QUESTIONS_EN_US,
+      OPEN_LATEST: 'I noticed that your latest video was about Binary and Data. Would you like to take a review quiz on this topic?',
       GAME_NAME: 'Binary and Data Check',
       HELP_MESSAGE: 'I will ask you %s multiple choice questions to see if you understood the video. To answer, respond with the number of the answer. For example, say one, two, three, or four.',
       REPEAT_QUESTION_MESSAGE: 'To repeat the last question, say, repeat. ',
