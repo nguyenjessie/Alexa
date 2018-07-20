@@ -126,6 +126,7 @@ function handleUserGuess(userGaveUp, handlerInput) {
 
     return responseBuilder
       .speak(speechOutput)
+      .emitWithState('AMAZON.EmailIntent')
       .getResponse();
   }
   currentQuestionIndex += 1;
@@ -294,6 +295,16 @@ const LaunchRequest = {
   },
 };
 
+const EmailIntent = {
+  canHandle(handlerInput) {
+    const { request } = handlerInput.requestEnvelope;
+
+    return request.type === 'IntentRequest' && request.intent.name === 'AMAZON.EmailIntent';
+  },
+  handle(handlerInput) {
+
+  }
+}
 
 const HelpIntent = {
   canHandle(handlerInput) {
@@ -456,7 +467,8 @@ exports.handler = skillBuilder
     CancelIntent,
     NoIntent,
     SessionEndedRequest,
-    UnhandledIntent
+    UnhandledIntent,
+    EmailIntent
   )
   .addRequestInterceptors(LocalizationInterceptor)
   .addErrorHandlers(ErrorHandler)
