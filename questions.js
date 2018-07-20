@@ -8,8 +8,8 @@ module.exports = {
   QUESTIONS_EN_US: [
     {
       'What is the smallest piece of information a computer can store?': [
-        'Code',
-        'Bit',
+        ‘Bit’,
+        ‘Code’,
         '5,000',
       ],
     },
@@ -22,7 +22,7 @@ module.exports = {
       ],
     },
     {
-      'What is the value of the binary number 110?': [
+      'What is the value of the binary number 110 in decimal?': [
         'Six',
         'Four',
         'Two',
@@ -35,6 +35,43 @@ module.exports = {
         'Four',
         'Twelve',
         'Sixteen',
+      ],
+    },
+    {
+      'How are vibrations represented graphically?’: [
+        ‘Waveforms’,
+        ‘Pixels’,
+        ‘Bit’,
+      ],
+    },
+    {
+      ‘What is the on/off state of a wire called?’: [
+        ‘Bit’,
+        ‘Wave’,
+        ‘Pixel’,
+        ‘Electricity’,
+      ],
+    },
+    {
+      ‘What is the value of a 9 in the 100 position in the decimal number system?’: [
+        ‘900’,
+        ‘9’,
+        ‘100’,
+        ‘90’,
+      ],
+    },
+    {
+      ‘With 8 wires, what is the largest number you can store?’: [
+        ‘255’,
+        ‘0’,
+        ‘32’,
+        ‘64’,
+      ],
+    },
+    {
+      ‘Can you represent text, images, and sound with numbers?’: [
+        ‘Yes’,
+        ‘No’,
       ],
     },
   ],
