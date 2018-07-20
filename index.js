@@ -98,6 +98,9 @@ function handleUserGuess(userGaveUp, handlerInput) {
   const requestAttributes = attributesManager.getRequestAttributes();
   const translatedQuestions = requestAttributes.t('QUESTIONS');
 
+  console.log(parseInt(intent.slots.Answer.value, 10), sessionAttributes.correctAnswerIndex, correctAnswerIndex);
+  console.log(answerSlotValid, parseInt(intent.slots.Answer.value, 10) === sessionAttributes.correctAnswerIndex)
+
 
   if (answerSlotValid
     && parseInt(intent.slots.Answer.value, 10) === sessionAttributes.correctAnswerIndex) {
@@ -123,8 +126,6 @@ function handleUserGuess(userGaveUp, handlerInput) {
       currentScore.toString(),
       GAME_LENGTH.toString()
     );
-
-    sendEmail();
 
     return responseBuilder
       .speak(speechOutput)
@@ -264,6 +265,14 @@ const languageString = {
       GAME_NAME: 'Binary and Data Review'
     },
   },
+  'en-GB': {
+    translation: {
+      QUESTIONS: questions.QUESTIONS_EN_GB,
+      GAME_NAME: 'Binary and Data Review'
+    },
+  },
+  de: {
+  },
 };
 
 
@@ -295,6 +304,7 @@ const LaunchRequest = {
     return startGame(true, handlerInput);
   },
 };
+
 
 const HelpIntent = {
   canHandle(handlerInput) {
